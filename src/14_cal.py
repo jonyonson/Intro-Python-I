@@ -22,3 +22,21 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+
+if len(sys.argv) == 1:
+    month = datetime.now().month
+    year = datetime.now().year
+    print(calendar.month(year, month))
+elif len(sys.argv) == 2:
+    month = int(sys.argv[1])
+    year = datetime.now().year
+    print(calendar.month(year, month))
+elif len(sys.argv) == 3:
+    month = int(sys.argv[1])
+    year = int(sys.argv[2])
+    print(calendar.month(year, month))
+else:
+    print("\nEnter an integer 1-12: python 14_cal.py 8")
+    print("Enter a month and a year: python 14_cal.py 7 2007")
+    print("Run without argument for current month's calendar: python 14_cal.py")
